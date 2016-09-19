@@ -1,0 +1,119 @@
+'Dotpulse.PageSection:MoveUriToSettingsMixin':
+  abstract: true
+  properties:
+    title:
+      ui:
+        inspector:
+          position: 100
+    uriPathSegment:
+      ui:
+        inspector:
+          group: visibility
+
+'Dotpulse.PageSection:BackgroundImageMixin':
+  abstract: true
+  ui:
+    inspector:
+      groups:
+        image:
+          label: i18n
+          icon: icon-picture
+          position: 100
+  properties:
+    image:
+      type: TYPO3\Media\Domain\Model\ImageInterface
+      ui:
+        label: i18n
+        reloadIfChanged: true
+        inspector:
+          position: 300
+          group: image
+
+'Dotpulse.PageSection:BackgroundPositionMixin':
+  abstract: true
+  properties:
+    backgroundPositionHorizontal:
+      type: string
+      defaultValue: center
+      ui:
+        label: i18n
+        reloadIfChanged: true
+        inspector:
+          group: image
+          position: 100
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              left:
+                label: i18n
+              '25%':
+                label: i18n
+              center:
+                label: i18n
+              '75%':
+                label: i18n
+              right:
+                label: i18n
+    backgroundPositionVertical:
+      type: string
+      defaultValue: center
+      ui:
+        label: i18n
+        reloadIfChanged: true
+        inspector:
+          group: image
+          position: 200
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              top:
+                label: i18n
+              '25%':
+                label: i18n
+              center:
+                label: i18n
+              '75%':
+                label: i18n
+              bottom:
+                label: i18n
+
+'Dotpulse.PageSection:BrightMixin':
+  abstract: true
+  properties:
+    bright:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: i18n
+        reloadIfChanged: true
+        inspector:
+          group: image
+          position: 500
+
+'Dotpulse.PageSection:MinHeightMixin':
+  abstract: true
+  properties:
+    minHeight:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: document
+          position: 500
+      validation:
+        'TYPO3.Neos/Validation/IntegerValidator': []
+    unit:
+      type: string
+      defaultValue: viewport
+      ui:
+        label: i18n
+        inspector:
+          group: document
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          position: 600
+          editorOptions:
+            values:
+              vh:
+                label: i18n
+              px:
+                label: i18n

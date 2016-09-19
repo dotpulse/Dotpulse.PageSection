@@ -1,0 +1,16 @@
+// BACKEND
+// If we are on a SubEntry Page
+root.pageSectionSubEntry {
+	condition = ${q(node).parent().parent().is(Configuration.setting('Dotpulse.PageSection.section')) && node.context.inBackend}
+	renderPath = '/pageSectionSubEntry'
+}
+
+pageSectionSubEntry = Page {
+	body {
+		templatePath = 'resource://Dotpulse.PageSection/Private/Templates/PageSection/SubEntry.html'
+		content = PS:ContentCollection {
+			backendMode = true
+			attributes.class.entry = ${Configuration.setting('Dotpulse.PageSection.ContentCollection.subEntryClass')}
+		}
+	}
+}

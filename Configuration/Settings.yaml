@@ -1,0 +1,25 @@
+TYPO3:
+  Neos:
+    typoScript:
+      autoInclude:
+        'Dotpulse.PageSection': true
+    userInterface:
+      translation:
+        autoInclude:
+          'Dotpulse.PageSection': ['NodeTypes/*']
+
+Dotpulse:
+  PageSection:
+    page: '[instanceof TYPO3.Neos.NodeTypes:Page]'
+    section: '[instanceof Dotpulse.PageSection:Document]'
+    mixin: '[instanceof Dotpulse.PageSection:DocumentMixin]'
+    headerHeight: false
+    ContentCollection:
+      entryClass: false
+      subEntryClass: false
+    linkProperty: link
+    idSeperator: '--'
+    titleSeperator: ' / '
+    linkSeperator:
+      first: ''
+      default: '/'

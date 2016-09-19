@@ -1,0 +1,29 @@
+.pagesection-wrapper-backend {
+	padding-top: 60px;
+}
+
+.pagesection-backend.pagesection-backend {
+	margin: 15px 15px 30px;
+	position: relative;
+	padding-top: 5em;
+}
+
+.pagesection-backend:before {
+	font-size: 2rem;
+	display: block;
+	margin: 1rem 0;
+	padding: 0 10px;
+	content: attr(data-title);
+	opacity: 0.5;
+	color: currentColor;
+	border-bottom: 1px solid currentColor;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	text-align: left;
+}
+
+.pagesection-backend:hover:before {
+	opacity: 0.7;
+}

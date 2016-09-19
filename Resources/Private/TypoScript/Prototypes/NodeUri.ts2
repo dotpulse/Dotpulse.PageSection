@@ -1,0 +1,9 @@
+prototype(PS:NodeUri) < prototype(NodeUri){
+	@context {
+		nodeObject = ${node}
+		configuration = ${Configuration.setting('Dotpulse.PageSection')}
+	}
+
+	node = ${q(nodeObject).is(configuration.page) ? nodeObject : q(nodeObject).parents(configuration.page).get(0)}
+	section = PS:CollectionProperty
+}

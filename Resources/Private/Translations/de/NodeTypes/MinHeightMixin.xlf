@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" product-name="Dotpulse.PageSection" source-language="de" datatype="plaintext">
+		<body>
+			<trans-unit id="properties.minHeight" xml:space="preserve">
+				<source>Minimale Höhe</source>
+			</trans-unit>
+			<trans-unit id="properties.unit" xml:space="preserve">
+				<source>Maßeinheit</source>
+			</trans-unit>
+			<trans-unit id="properties.unit.selectBoxEditor.values.vh" xml:space="preserve">
+				<source>Prozent der Bildschirmhöhe</source>
+			</trans-unit>
+			<trans-unit id="properties.unit.selectBoxEditor.values.px" xml:space="preserve">
+				<source>Pixel</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

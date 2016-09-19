@@ -1,0 +1,81 @@
+prototype(PS:ContentCollection) < prototype(TS:Tag) {
+	@context {
+		configuration = ${Configuration.setting('Dotpulse.PageSection')}
+		renderSubEntries= ${this.renderSubEntries}
+		isSubentry = ${this.isSubentry}
+		backendMode = ${this.backendMode}
+	}
+
+	renderSubEntries = false
+	isSubentry = false
+	backendMode = false
+
+	tagName = ${isSubentry ? 'div' : 'section' }
+
+	attributes {
+		data-url = PS:CollectionProperty
+		data-title = TS:Array {
+			prefix = ${Translation.translateById('data.section', 'Dotpulse.PageSection')}
+			prefix.@if.inBackend = ${node.context.inBackend}
+			title = PS:CollectionProperty {
+				property = 'title'
+				seperator {
+					first = ''
+					default = ${configuration.titleSeperator}
+				}
+			}
+		}
+		id = PS:CollectionProperty {
+			seperator {
+				first = ''
+				default = ${configuration.idSeperator}
+			}
+		}
+		class = TS:RawArray {
+			default = ${'pagesection-' + (isSubentry ? 'subentry' : 'entry')}
+			menu = ${q(node).property('_hiddenInIndex') ? 'pagesection-hidden-in-menu' : 'pagesection-visible-in-menu'}
+			backendMode = ${backendMode ? 'pagesection-backend' : false}
+			hasImage = ${q(node).property('image') ? 'pagesection-entry-hasimage' : false}
+			bright = ${q(node).property('image') && q(node).property('bright') ? 'pagesection-entry-bright' : false}
+			dark = ${q(node).property('image') && !q(node).property('bright') ? 'pagesection-entry-dark' : false}
+		}
+		style = TS:Array {
+			image = TS:Case {
+				hasImage {
+					condition = ${q(node).property('image')}
+					renderer = TS:Array {
+						image = ImageUri {
+							asset = ${q(node).property('image')}
+						}
+						@process.wrapper = ${'background-image:url(' + value + ');'}
+					}
+				}
+			}
+			position = ${'background-position:' + q(node).property('backgroundPositionHorizontal') + ' ' + q(node).property('backgroundPositionVertical') + ';'}
+			position.@if.hasValue = ${q(node).property('image') && q(node).property('backgroundPositionHorizontal') && q(node).property('backgroundPositionVertical') ? true : false}
+
+			minHeight = TS:Case {
+				hasHeaderAndViewportUnit {
+					condition = ${configuration.headerHeight && q(node).property('unit') == 'vh'}
+					renderer = ${'min-height:calc(' + q(node).property('minHeight') + 'vh - ' + configuration.headerHeight + ');'}
+				}
+				default {
+					condition = true
+					renderer = ${'min-height:' + q(node).property('minHeight') + q(node).property('unit') + ';'}
+				}
+
+				@if.hasValue = ${q(node).property('minHeight') ? true : false}
+			}
+		}
+	}
+
+	content = TS:Array {
+		contentCollection = ContentCollection {
+			nodePath = 'section'
+			@if.showIt = ${q(node).children().count()}
+		}
+		subEntries = PS:SubEntries {
+			@if.render = ${renderSubEntries}
+		}
+	}
+}

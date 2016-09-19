@@ -1,0 +1,3 @@
+prototype(Page) {
+	head.pageSection = PS:BackendCSSTag
+}

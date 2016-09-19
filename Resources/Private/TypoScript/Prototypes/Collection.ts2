@@ -1,0 +1,37 @@
+prototype(PS:Collection) < prototype(TS:Tag) {
+	@context {
+		configuration = ${Configuration.setting('Dotpulse.PageSection')}
+		collection = ${this.collection}
+		backendMode = ${this.backendMode}
+		renderSubEntries = ${this.renderSubEntries}
+	}
+
+	collection = ${q(node).children(configuration.mixin)}
+	backendMode = false
+	renderSubEntries = true
+
+	@ignoreProperties = ${['collection','backendMode','renderSubEntries']}
+
+	attributes {
+		id = PS:CollectionProperty {
+			seperator {
+				first = ''
+				default = ${configuration.idSeperator}
+			}
+		}
+		class = TS:RawArray {
+			wrapper = 'pagesection-wrapper'
+			backendMode = ${backendMode ? 'pagesection-wrapper-backend' : false}
+		}
+	}
+
+	content = TS:Collection {
+		collection = ${collection}
+		itemName = 'node'
+		iterationName = 'nodeIterator'
+		itemRenderer = PS:ContentCollection {
+			renderSubEntries = ${renderSubEntries}
+			backendMode = ${backendMode}
+		}
+	}
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" product-name="Dotpulse.PageSection" source-language="de" datatype="plaintext">
+		<body>
+			<trans-unit id="properties.backgroundPositionHorizontal" xml:space="preserve">
+				<source>Horizontale Position vom Hintergrundbild</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionVertical" xml:space="preserve">
+				<source>Vertikale Position vom Hintergrundbild</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionHorizontal.selectBoxEditor.values.left" xml:space="preserve">
+				<source>Links</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionHorizontal.selectBoxEditor.values.25%" xml:space="preserve">
+				<source>25% von links</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionHorizontal.selectBoxEditor.values.center" xml:space="preserve">
+				<source>Zentriert</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionHorizontal.selectBoxEditor.values.75%" xml:space="preserve">
+				<source>25% von rechts</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionHorizontal.selectBoxEditor.values.right" xml:space="preserve">
+				<source>Rechts</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionVertical.selectBoxEditor.values.top" xml:space="preserve">
+				<source>Oben</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionVertical.selectBoxEditor.values.25%" xml:space="preserve">
+				<source>25% von oben</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionVertical.selectBoxEditor.values.center" xml:space="preserve">
+				<source>Zentriert</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionVertical.selectBoxEditor.values.75%" xml:space="preserve">
+				<source>25% von unten</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionVertical.selectBoxEditor.values.bottom" xml:space="preserve">
+				<source>Unten</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,3 @@
+'Dotpulse.PageSection:ContentCollection':
+  superTypes:
+    'TYPO3.Neos:ContentCollection': true

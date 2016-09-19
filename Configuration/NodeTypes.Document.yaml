@@ -1,0 +1,56 @@
+'TYPO3.Neos:Document':
+  constraints:
+    nodeTypes:
+      'Dotpulse.PageSection:DocumentMixin': false
+      'Dotpulse.PageSection:Document': true
+
+'Dotpulse.PageSection:Document':
+  superTypes:
+    'Dotpulse.PageSection:DocumentMixin': true
+  ui:
+    icon: icon-book
+    label: i18n
+    inspector:
+      groups:
+        document:
+          label: i18n
+  constraints:
+    nodeTypes:
+      'Dotpulse.PageSection:Entry': true
+
+
+'Dotpulse.PageSection:Entry':
+  superTypes:
+    'Dotpulse.PageSection:DocumentMixin': true
+    'Dotpulse.PageSection:BackgroundImageMixin': true
+    'Dotpulse.PageSection:BackgroundPositionMixin': true
+    'Dotpulse.PageSection:MinHeightMixin': true
+    'Dotpulse.PageSection:BrightMixin': true
+  ui:
+    icon: icon-sticky-note-o
+    label: i18n
+    inspector:
+      groups:
+        document:
+          label: i18n
+  childNodes:
+    section:
+      type: 'Dotpulse.PageSection:ContentCollection'
+  constraints:
+    nodeTypes:
+      'Dotpulse.PageSection:SubEntry': true
+
+
+'Dotpulse.PageSection:SubEntry':
+  superTypes:
+    'Dotpulse.PageSection:DocumentMixin': true
+  ui:
+    icon: icon-bookmark-empty
+    label: i18n
+    inspector:
+      groups:
+        document:
+          label: i18n
+  childNodes:
+    section:
+      type: 'Dotpulse.PageSection:ContentCollection'

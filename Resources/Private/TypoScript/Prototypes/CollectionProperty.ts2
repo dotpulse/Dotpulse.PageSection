@@ -1,0 +1,24 @@
+prototype(PS:CollectionProperty) < prototype(TS:Collection){
+	@context {
+		configuration = ${Configuration.setting('Dotpulse.PageSection')}
+		property = ${this.property}
+		seperator = ${this.seperator}
+	}
+
+	property = 'uriPathSegment'
+	nodeObject = ${nodeObject ? nodeObject : node}
+
+	seperator = TS:RawArray {
+		first = ${configuration.linkSeperator.first}
+		default = ${configuration.linkSeperator.default}
+	}
+
+	array = ${q(this.nodeObject).add(q(this.nodeObject).parentsUntil(configuration.page)).get()}
+
+	@ignoreProperties = ${['property','seperator','nodeObject','array']}
+
+	collection = ${Array.reverse(this.array)}
+	iterationName = 'iterator'
+	itemName = 'element'
+	itemRenderer = ${(iterator.isFirst ? seperator.first : seperator.default) + q(element).property(property)}
+}

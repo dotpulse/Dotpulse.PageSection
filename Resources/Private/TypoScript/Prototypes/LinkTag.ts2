@@ -1,0 +1,13 @@
+prototype(PS:LinkTag) < prototype(TS:Tag) {
+	@context.nodeObject = ${node}
+	@context.configuration = ${Configuration.setting('Dotpulse.PageSection')}
+
+	property = 'title'
+	tagName = 'a'
+	content = ${q(nodeObject).property(this.property)}
+	attributes {
+		href = PS:NodeUri {
+			@context.nodeObject = ${nodeObject}
+		}
+	}
+}

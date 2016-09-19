@@ -1,0 +1,26 @@
+'Dotpulse.PageSection:DocumentMixin':
+  abstract: true
+  superTypes:
+    'TYPO3.Neos:Document': true
+    'Jonnitto.Sitemap:RemoveFromSitemap': true
+    'Dotpulse.PageSection:MoveUriToSettingsMixin': true
+    'TYPO3.Neos.Seo:TitleTagMixin': false
+    'TYPO3.Neos.Seo:SeoMetaTagsMixin': false
+    'TYPO3.Neos.Seo:TwitterCardMixin': false
+    'TYPO3.Neos.Seo:CanonicalLinkMixin': false
+    'TYPO3.Neos.Seo:OpenGraphMixin': false
+    'TYPO3.Neos.Seo:XmlSitemapMixin': false
+    'Dotpulse.NamingConvention:SettingsMixin': false
+    'Dotpulse.NamingConvention:TitleOverrideMixin': false
+    'Dotpulse.NamingConvention:DescriptionMixin': false
+    'Dotpulse.NamingConvention:ShowPathTitleMixin': false
+    'Dotpulse.NamingConvention:TitleInheritMixin': false
+    'Dotpulse.NamingConvention:DescriptionInheritMixin': false
+    'Dotpulse.NamingConvention:ShowInPathTitleMixin': false
+    'Dotpulse.NamingConvention:UseOverrideInPathMixin': false
+  constraints:
+    nodeTypes:
+      'TYPO3.Neos:Document': false
+      'TYPO3.Neos:Shortcut': false
+      'Dotpulse.PageSection:DocumentMixin': false
+      'Dotpulse.PageSection:Document': false

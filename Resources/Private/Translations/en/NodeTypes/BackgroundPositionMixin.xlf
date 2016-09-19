@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" product-name="Dotpulse.PageSection" source-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="properties.backgroundPositionHorizontal" xml:space="preserve">
+				<source>Horizontal position</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionVertical" xml:space="preserve">
+				<source>Vertical position</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionHorizontal.selectBoxEditor.values.left" xml:space="preserve">
+				<source>Left</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionHorizontal.selectBoxEditor.values.25%" xml:space="preserve">
+				<source>25% from the left</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionHorizontal.selectBoxEditor.values.center" xml:space="preserve">
+				<source>Center</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionHorizontal.selectBoxEditor.values.75%" xml:space="preserve">
+				<source>25% from the right</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionHorizontal.selectBoxEditor.values.right" xml:space="preserve">
+				<source>Right</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionVertical.selectBoxEditor.values.top" xml:space="preserve">
+				<source>Top</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionVertical.selectBoxEditor.values.25%" xml:space="preserve">
+				<source>25% from the top</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionVertical.selectBoxEditor.values.center" xml:space="preserve">
+				<source>Middle</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionVertical.selectBoxEditor.values.75%" xml:space="preserve">
+				<source>25% from the bottom</source>
+			</trans-unit>
+			<trans-unit id="properties.backgroundPositionVertical.selectBoxEditor.values.bottom" xml:space="preserve">
+				<source>Bottom</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

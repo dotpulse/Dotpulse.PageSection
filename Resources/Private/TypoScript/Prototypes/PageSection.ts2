@@ -1,0 +1,35 @@
+prototype(PS:PageSection) < prototype(TS:Tag) {
+	@if.render = ${q(node).children(configuration.mixin).count() ? true : false}
+	@context.configuration = ${Configuration.setting('Dotpulse.PageSection')}
+
+	attributes = TS:Attributes {
+		id = 'pagesection'
+		class = TS:RawArray {
+			wrapper = 'pagesection-container'
+		}
+	}
+
+	content = TS:Array {
+		menu = PS:Menu
+		content = TS:Collection {
+			collection = ${q(node).children(configuration.mixin)}
+			itemName = 'node'
+			iterationName = 'nodeIterator'
+			itemRenderer = PS:Collection
+		}
+	}
+
+	@cache {
+		mode = 'cached'
+
+		entryIdentifier {
+			node = ${node}
+			editPreviewMode = ${node.context.currentRenderingMode.name}
+		}
+
+		entryTags {
+			1 = ${'Node_' + documentNode.identifier}
+			2 = ${'DescendantOf_' + documentNode.identifier}
+		}
+	}
+}

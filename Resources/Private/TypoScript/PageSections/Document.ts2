@@ -1,0 +1,24 @@
+// BACKEND
+// If we are on a Document Page
+root.pageSectionDocument {
+	condition = ${q(node).is(Configuration.setting('Dotpulse.PageSection.section')) && node.context.inBackend}
+	renderPath = '/pageSectionDocument'
+}
+
+pageSectionDocument = Page {
+	body {
+		templatePath = 'resource://Dotpulse.PageSection/Private/Templates/PageSection/Document.html'
+		pageSectionCollection = PS:Collection {
+			backendMode = true
+		}
+	}
+
+	@context.pageSectionNodes = ${q(node).context({'invisibleContentShown': true}).find(Configuration.setting('Dotpulse.PageSection.mixin')).get()}
+
+	@cache {
+		entryTags {
+			3 = ${Neos.Caching.descendantOfTag(pageSectionNodes)}
+			4 = ${'DescendantOf_' + node.identifier}
+		}
+	}
+}

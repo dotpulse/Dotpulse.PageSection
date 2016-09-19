@@ -1,0 +1,16 @@
+// BACKEND
+// If we are on a Entry Page
+root.pageSectionEntry {
+	condition = ${q(node).parent().is(Configuration.setting('Dotpulse.PageSection.section')) && node.context.inBackend}
+	renderPath = '/pageSectionEntry'
+}
+
+pageSectionEntry = Page {
+	body {
+		templatePath = 'resource://Dotpulse.PageSection/Private/Templates/PageSection/Entry.html'
+		content = PS:ContentCollection {
+			backendMode = true
+			attributes.class.entry = ${Configuration.setting('Dotpulse.PageSection.ContentCollection.entryClass')}
+		}
+	}
+}

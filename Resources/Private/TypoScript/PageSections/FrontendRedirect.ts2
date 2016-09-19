@@ -1,0 +1,8 @@
+// LIVE
+// If there is a PageSection in the Rootline
+root.pageSectionFrontendRedirect {
+	condition = ${q(node).children().parents().filter(Configuration.setting('Dotpulse.PageSection.section')).is() && node.context.live}
+	renderPath = '/pageSectionFrontendRedirect'
+}
+
+pageSectionFrontendRedirect = PS:Redirect

@@ -1,0 +1,47 @@
+prototype(PS:Menu) < prototype(TS:Tag) {
+	@context {
+		configuration = ${Configuration.setting('Dotpulse.PageSection')}
+		nodeObject = ${this.nodeObject}
+		level = ${this.level}
+	}
+	nodeObject = ${node}
+	level = false
+	@if.hasMoreThanOneChildren = ${q(nodeObject).children(configuration.mixin).count() > 1}
+
+	tagName = 'ul'
+	attributes {
+		class = TS:RawArray {
+			default = ${'pagesection-' + (level ? level + '-' : '') + 'menu'}
+		}
+	}
+	content = TS:Collection {
+		collection = ${q(nodeObject).children(configuration.mixin)}
+		itemName = 'node'
+		iterationName = 'nodeIterator'
+		itemRenderer = TS:Tag {
+			tagName = 'li'
+			attributes {
+				class = TS:RawArray {
+					active = ${nodeIterator.isFirst ? 'active' : false}
+					default = ${'pagesection-' + (level ? level + '-' : '') + 'item'}
+				}
+			}
+			content = TS:Tag {
+				tagName = 'a'
+				attributes {
+					class = TS:RawArray {
+						default = ${'pagesection-' + (level ? level + '-' : '') + 'menu-link'}
+					}
+					href = PS:CollectionProperty {
+						@context.nodeObject = ${item}
+						seperator {
+							first = '#'
+							default = ${configuration.idSeperator}
+						}
+					}
+				}
+				content = ${q(node).property('title')}
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+prototype(PS:SubEntries) < prototype(TS:Tag) {
+	@if.hasSubEntries = ${q(node).children(Configuration.setting('Dotpulse.PageSection.mixin')).count() > 0}
+
+	attributes = TS:Attributes {
+		id = PS:CollectionProperty {
+			seperator {
+				first = ''
+				default = ${configuration.idSeperator}
+			}
+			@process.sub = ${value + '-sub'}
+		}
+
+		class = TS:RawArray {
+			wrapper = 'pagesection-subentries-wrapper'
+			hasSubEntries = ${'pagesection-subentries-' + (q(node).children(Configuration.setting('Dotpulse.PageSection.mixin')).count() > 1 ? 'has-menu' : 'no-menu')}
+		}
+	}
+
+	content = TS:Array {
+		menu = PS:Menu {
+			level = 'subentry'
+		}
+
+		content = PS:Collection {
+			renderSubEntries = false
+			attributes {
+				id >
+				class.wrapper = 'pagesection-subentry-wrapper'
+			}
+			content.itemRenderer {
+				isSubentry = true
+			}
+		}
+	}
+}

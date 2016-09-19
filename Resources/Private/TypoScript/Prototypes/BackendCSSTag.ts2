@@ -1,0 +1,11 @@
+prototype(PS:BackendCSSTag) < prototype(TS:Tag) {
+	tagName = 'link'
+	attributes {
+		rel = 'stylesheet'
+		class = 'neos-ui-asset'
+		href = TS:ResourceUri {
+			path = 'resource://Dotpulse.PageSection/Public/Backend.css'
+		}
+	}
+	@if.isBackend = ${node.context.inBackend}
+}
