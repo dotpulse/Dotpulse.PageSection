@@ -1,7 +1,7 @@
-prototype(PS:SubEntries) < prototype(TS:Tag) {
+prototype(PS:SubEntries) < prototype(Fusion:Tag) {
 	@if.hasSubEntries = ${q(node).children(Configuration.setting('Dotpulse.PageSection.mixin')).count() > 0}
 
-	attributes = TS:Attributes {
+	attributes = Fusion:Attributes {
 		id = PS:CollectionProperty {
 			seperator {
 				first = ''
@@ -10,13 +10,13 @@ prototype(PS:SubEntries) < prototype(TS:Tag) {
 			@process.sub = ${value + '-sub'}
 		}
 
-		class = TS:RawArray {
+		class = Fusion:RawArray {
 			wrapper = 'pagesection-subentries-wrapper'
 			hasSubEntries = ${'pagesection-subentries-' + (q(node).children(Configuration.setting('Dotpulse.PageSection.mixin')).count() > 1 ? 'has-menu' : 'no-menu')}
 		}
 	}
 
-	content = TS:Array {
+	content = Fusion:Array {
 		menu = PS:Menu {
 			level = 'subentry'
 		}

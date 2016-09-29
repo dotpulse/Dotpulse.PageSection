@@ -1,4 +1,4 @@
-prototype(PS:CollectionProperty) < prototype(TS:Collection){
+prototype(PS:CollectionProperty) < prototype(Fusion:Collection){
 	@context {
 		configuration = ${Configuration.setting('Dotpulse.PageSection')}
 		property = ${this.property}
@@ -8,7 +8,7 @@ prototype(PS:CollectionProperty) < prototype(TS:Collection){
 	property = 'uriPathSegment'
 	nodeObject = ${nodeObject ? nodeObject : node}
 
-	seperator = TS:RawArray {
+	seperator = Fusion:RawArray {
 		first = ${configuration.linkSeperator.first}
 		default = ${configuration.linkSeperator.default}
 	}

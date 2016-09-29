@@ -1,4 +1,4 @@
-prototype(PS:Collection) < prototype(TS:Tag) {
+prototype(PS:Collection) < prototype(Fusion:Tag) {
 	@context {
 		configuration = ${Configuration.setting('Dotpulse.PageSection')}
 		collection = ${this.collection}
@@ -19,13 +19,13 @@ prototype(PS:Collection) < prototype(TS:Tag) {
 				default = ${configuration.idSeperator}
 			}
 		}
-		class = TS:RawArray {
+		class = Fusion:RawArray {
 			wrapper = 'pagesection-wrapper'
 			backendMode = ${backendMode ? 'pagesection-wrapper-backend' : false}
 		}
 	}
 
-	content = TS:Collection {
+	content = Fusion:Collection {
 		collection = ${collection}
 		itemName = 'node'
 		iterationName = 'nodeIterator'

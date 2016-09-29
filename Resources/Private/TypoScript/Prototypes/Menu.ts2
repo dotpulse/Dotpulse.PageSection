@@ -1,4 +1,4 @@
-prototype(PS:Menu) < prototype(TS:Tag) {
+prototype(PS:Menu) < prototype(Fusion:Tag) {
 	@context {
 		configuration = ${Configuration.setting('Dotpulse.PageSection')}
 		nodeObject = ${this.nodeObject}
@@ -10,26 +10,26 @@ prototype(PS:Menu) < prototype(TS:Tag) {
 
 	tagName = 'ul'
 	attributes {
-		class = TS:RawArray {
+		class = Fusion:RawArray {
 			default = ${'pagesection-' + (level ? level + '-' : '') + 'menu'}
 		}
 	}
-	content = TS:Collection {
+	content = Fusion:Collection {
 		collection = ${q(nodeObject).children(configuration.mixin)}
 		itemName = 'node'
 		iterationName = 'nodeIterator'
-		itemRenderer = TS:Tag {
+		itemRenderer = Fusion:Tag {
 			tagName = 'li'
 			attributes {
-				class = TS:RawArray {
+				class = Fusion:RawArray {
 					active = ${nodeIterator.isFirst ? 'active' : false}
 					default = ${'pagesection-' + (level ? level + '-' : '') + 'item'}
 				}
 			}
-			content = TS:Tag {
+			content = Fusion:Tag {
 				tagName = 'a'
 				attributes {
-					class = TS:RawArray {
+					class = Fusion:RawArray {
 						default = ${'pagesection-' + (level ? level + '-' : '') + 'menu-link'}
 					}
 					href = PS:CollectionProperty {

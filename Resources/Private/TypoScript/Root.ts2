@@ -1,5 +1,5 @@
-namespace: TS=TYPO3.TypoScript
-namespace: PS=Dotpulse.PageSection
+namespace: Fusion = TYPO3.TypoScript
+namespace: PS = Dotpulse.PageSection
 
 include: Prototypes/**/*.ts2
 include: PageSections/**/*.ts2

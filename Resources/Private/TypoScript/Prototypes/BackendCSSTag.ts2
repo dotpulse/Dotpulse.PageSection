@@ -1,9 +1,9 @@
-prototype(PS:BackendCSSTag) < prototype(TS:Tag) {
+prototype(PS:BackendCSSTag) < prototype(Fusion:Tag) {
 	tagName = 'link'
 	attributes {
 		rel = 'stylesheet'
 		class = 'neos-ui-asset'
-		href = TS:ResourceUri {
+		href = Fusion:ResourceUri {
 			path = 'resource://Dotpulse.PageSection/Public/Backend.css'
 		}
 	}

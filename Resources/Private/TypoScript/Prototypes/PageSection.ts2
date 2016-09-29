@@ -1,17 +1,17 @@
-prototype(PS:PageSection) < prototype(TS:Tag) {
+prototype(PS:PageSection) < prototype(Fusion:Tag) {
 	@if.render = ${q(node).children(configuration.mixin).count() ? true : false}
 	@context.configuration = ${Configuration.setting('Dotpulse.PageSection')}
 
-	attributes = TS:Attributes {
+	attributes = Fusion:Attributes {
 		id = 'pagesection'
-		class = TS:RawArray {
+		class = Fusion:RawArray {
 			wrapper = 'pagesection-container'
 		}
 	}
 
-	content = TS:Array {
+	content = Fusion:Array {
 		menu = PS:Menu
-		content = TS:Collection {
+		content = Fusion:Collection {
 			collection = ${q(node).children(configuration.mixin)}
 			itemName = 'node'
 			iterationName = 'nodeIterator'

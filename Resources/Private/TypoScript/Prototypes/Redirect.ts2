@@ -1,4 +1,4 @@
-prototype(PS:Redirect) < prototype(TS:Http.Message) {
+prototype(PS:Redirect) < prototype(Fusion:Http.Message) {
 	httpResponseHead {
 		statusCode = 301
 		headers.Location = PS:NodeUri

@@ -1,4 +1,4 @@
-prototype(PS:ContentCollection) < prototype(TS:Tag) {
+prototype(PS:ContentCollection) < prototype(Fusion:Tag) {
 	@context {
 		configuration = ${Configuration.setting('Dotpulse.PageSection')}
 		renderSubEntries= ${this.renderSubEntries}
@@ -14,7 +14,7 @@ prototype(PS:ContentCollection) < prototype(TS:Tag) {
 
 	attributes {
 		data-url = PS:CollectionProperty
-		data-title = TS:Array {
+		data-title = Fusion:Array {
 			prefix = ${Translation.translateById('data.section', 'Dotpulse.PageSection')}
 			prefix.@if.inBackend = ${node.context.inBackend}
 			title = PS:CollectionProperty {
@@ -31,7 +31,7 @@ prototype(PS:ContentCollection) < prototype(TS:Tag) {
 				default = ${configuration.idSeperator}
 			}
 		}
-		class = TS:RawArray {
+		class = Fusion:RawArray {
 			default = ${'pagesection-' + (isSubentry ? 'subentry' : 'entry')}
 			menu = ${q(node).property('_hiddenInIndex') ? 'pagesection-hidden-in-menu' : 'pagesection-visible-in-menu'}
 			backendMode = ${backendMode ? 'pagesection-backend' : false}
@@ -39,11 +39,11 @@ prototype(PS:ContentCollection) < prototype(TS:Tag) {
 			bright = ${q(node).property('image') && q(node).property('bright') ? 'pagesection-entry-bright' : false}
 			dark = ${q(node).property('image') && !q(node).property('bright') ? 'pagesection-entry-dark' : false}
 		}
-		style = TS:Array {
-			image = TS:Case {
+		style = Fusion:Array {
+			image = Fusion:Case {
 				hasImage {
 					condition = ${q(node).property('image')}
-					renderer = TS:Array {
+					renderer = Fusion:Array {
 						image = ImageUri {
 							asset = ${q(node).property('image')}
 						}
@@ -54,7 +54,7 @@ prototype(PS:ContentCollection) < prototype(TS:Tag) {
 			position = ${'background-position:' + q(node).property('backgroundPositionHorizontal') + ' ' + q(node).property('backgroundPositionVertical') + ';'}
 			position.@if.hasValue = ${q(node).property('image') && q(node).property('backgroundPositionHorizontal') && q(node).property('backgroundPositionVertical') ? true : false}
 
-			minHeight = TS:Case {
+			minHeight = Fusion:Case {
 				hasHeaderAndViewportUnit {
 					condition = ${configuration.headerHeight && q(node).property('unit') == 'vh'}
 					renderer = ${'min-height:calc(' + q(node).property('minHeight') + 'vh - ' + configuration.headerHeight + ');'}
@@ -69,7 +69,7 @@ prototype(PS:ContentCollection) < prototype(TS:Tag) {
 		}
 	}
 
-	content = TS:Array {
+	content = Fusion:Array {
 		contentCollection = ContentCollection {
 			nodePath = 'section'
 			@if.showIt = ${q(node).children().count()}

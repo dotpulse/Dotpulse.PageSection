@@ -1,4 +1,4 @@
-prototype(PS:Link) < prototype(TS:Case) {
+prototype(PS:Link) < prototype(Fusion:Case) {
 	@context {
 		configuration = ${Configuration.setting('Dotpulse.PageSection')}
 		nodeObject = ${node}
@@ -6,7 +6,7 @@ prototype(PS:Link) < prototype(TS:Case) {
 
 	isNode {
 		condition = ${Neos.Link.getScheme(q(nodeObject).property(configuration.linkProperty)) == 'node'}
-		renderer = TS:Case {
+		renderer = Fusion:Case {
 			isPageSection {
 				condition = ${q(Neos.Link.convertUriToObject(q(nodeObject).property(configuration.linkProperty), nodeObject)).is(configuration.mixin)}
 				renderer = PS:NodeUri {
