@@ -15,7 +15,8 @@ prototype(PS:ContentCollection) < prototype(Fusion:Tag) {
 	attributes {
 		data-url = PS:CollectionProperty
 		data-title = Fusion:Array {
-			prefix = ${Translation.translateById('data.section', 'Dotpulse.PageSection')}
+			prefix = ${Translation.translate('data.section', null, [], null, 'Dotpulse.PageSection')}
+
 			prefix.@if.inBackend = ${node.context.inBackend}
 			title = PS:CollectionProperty {
 				property = 'title'
