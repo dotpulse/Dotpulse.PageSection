@@ -24,19 +24,19 @@
 				<source>Right</source>
 			</trans-unit>
 			<trans-unit id="properties.backgroundPositionVertical.selectBoxEditor.values.top" xml:space="preserve">
-				<source>Top</source>
+				<source>On the top</source>
 			</trans-unit>
 			<trans-unit id="properties.backgroundPositionVertical.selectBoxEditor.values.25%" xml:space="preserve">
 				<source>25% from the top</source>
 			</trans-unit>
 			<trans-unit id="properties.backgroundPositionVertical.selectBoxEditor.values.center" xml:space="preserve">
-				<source>Middle</source>
+				<source>In the middle</source>
 			</trans-unit>
 			<trans-unit id="properties.backgroundPositionVertical.selectBoxEditor.values.75%" xml:space="preserve">
 				<source>25% from the bottom</source>
 			</trans-unit>
 			<trans-unit id="properties.backgroundPositionVertical.selectBoxEditor.values.bottom" xml:space="preserve">
-				<source>Bottom</source>
+				<source>On the bottom</source>
 			</trans-unit>
 		</body>
 	</file>
